@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de Voitures</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        window.onload = () => {
+            showSection('home'); // Afficher la page d'accueil par défaut
+        };
+    </script>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#" onclick="showSection('home')">Accueil</a></li>
+        <li><a href="#" onclick="showSection('reservation')">Réservation</a></li>
+        <li><a href="#" onclick="showSection('voitures')">Nos Voitures</a></li>
+        <li><a href="#" onclick="showSection('commande')">Commande</a></li>
+    </ul>
+</nav>
+
+<div id="home" class="section">
+    <h1>Bienvenue chez Location de Voitures</h1>
+    <p>Découvrez notre sélection de véhicules de qualité à louer pour toutes vos occasions.</p>
+    <button onclick="showSection('voitures')" class="btn">Voir nos voitures</button>
+</div>
+
+<div id="reservation" class="section" style="display: none;">
+    <h2>Réservation</h2>
+    <form>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
+        
+        <label for="date">Date de location :</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="voiture">Choisissez votre véhicule :</label>
+        <select id="voiture" name="voiture">
+            <option value="bmw_serie1">BMW Série 1</option>
+            <option value="bmw_serie3">BMW Série 3</option>
+            <option value="audi_a3">Audi A3</option>
+            <option value="audi_a5">Audi A5</option>
+            <option value="mercedes_c220d">Mercedes C220d</option>
+        </select>
+        
+        <button type="submit" class="btn">Réserver</button>
+    </form>
+</div>
+
+<div id="voitures" class="section" style="display: none;">
+    <h2>Nos Voitures</h2>
+    <div class="car-list">
+        <div class="car-item">
+            <h3>BMW Série 1</h3>
+            <img src="images/bmw_serie1.jpg" alt="BMW Série 1">
+            <p>Compacte sportive, idéale pour la ville et les longs trajets.</p>
+        </div>
+        <div class="car-item">
+            <h3>BMW Série 3</h3>
+            <img src="images/bmw_serie3.jpg" alt="BMW Série 3">
+            <p>Berline élégante avec un équilibre parfait entre performance et confort.</p>
+        </div>
+        <div class="car-item">
+            <h3>Audi A3</h3>
+            <img src="images/audi_a3.jpg" alt="Audi A3">
+            <p>Polyvalente et dynamique, elle s'adapte à tous les styles de conduite.</p>
+        </div>
+        <div class="car-item">
+            <h3>Audi A5</h3>
+            <img src="images/audi_a5.jpg" alt="Audi A5">
+            <p>Coupé élégant avec un intérieur raffiné et des performances remarquables.</p>
+        </div>
+        <div class="car-item">
+            <h3>Mercedes C220d</h3>
+            <img src="images/mercedes_c220d.jpg" alt="Mercedes C220d">
+            <p>Berline de luxe avec un moteur diesel économique et puissant.</p>
+        </div>
+    </div>
+</div>
+
+<div id="commande" class="section" style="display: none;">
+    <h2>Votre Commande</h2>
+    <p>Merci pour votre réservation. Voici un récapitulatif de votre commande :</p>
+    <ul>
+        <li><strong>Nom :</strong> [Nom de l'utilisateur]</li>
+        <li><strong>Prénom :</strong> [Prénom de l'utilisateur]</li>
+        <li><strong>Véhicule :</strong> [Véhicule sélectionné]</li>
+        <li><strong>Date de location :</strong> [Date sélectionnée]</li>
+    </ul>
+    <p>Nous vous remercions pour votre confiance.</p>
+</div>
+
+</body>
+</html>
